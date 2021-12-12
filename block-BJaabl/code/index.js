@@ -5,7 +5,7 @@
 function sayHello(name){
   alert(`Hello ${name}`)
 }
-sayHello (`john`);
+// sayHello (`john`);
 
 /*
 2. Create a function named `getFullName` that accepts two parameter `firstName` and `lastName` and returns
@@ -19,8 +19,8 @@ Example:
 function getFullName (firstname, lastName){
   return  ` Hello ${ firstname } ${lastName} `;
 }
-getFullName ("naman", "aggarwal");
-getFullName ("kushal", "Dave");
+// getFullName ("naman", "aggarwal");
+// getFullName ("kushal", "Dave");
 
 /*
 3. Create a function named `addTwoNumbers` that accepts two numbers i.e `firstNum` and `secondNum` and returns
@@ -39,10 +39,10 @@ function addTwoNumbers(firstNum, secondNum){
   }
 }
 
-addTwoNumbers(22, 12);
-addTwoNumbers(45, 56);
-addTwoNumbers(22, `nmn`);
-addTwoNumbers(`nmn`, 12);
+// addTwoNumbers(22, 12);
+// addTwoNumbers(45, 56);
+// addTwoNumbers(22, `nmn`);
+// addTwoNumbers(`nmn`, 12);
 
 
 /*
@@ -57,21 +57,37 @@ calc(20, 10, 'sub'); // 10
 calc(20, 10, 'mul'); // 200
 */
 
-let numA = +prompt(`enter first num`);
-let numB = +prompt(`enter second num`);
-let operation = prompt(`Operation
-can only be one of these add, sub, mul, div.`)
-if(operation === "add"){
-  alert(`The sum of numbers is ${numA + numB}`)
-}else if (operation === "sub"){
-  alert(`The subtraction of numbers is ${numA - numB}`)
-}else if (operation==="mul"){
-  alert(`The multiplication of numbers is ${numA * numB}`)
-}else if (operation==="div"){
-  alert(`The division of numbers is ${numA / numB}`)
-}else{
-  alert(`enter a valid input.`)
+function calc (numA, numB, operation){
+  if(typeof numA !== "number" || typeof numB !== "number"){
+    alert(`enter a valid input`)
+  }else{
+    switch(operation){
+      case "add": return numA+numB;break;
+      case "sub": return numA-numB;break;
+      case "mul": return numA*numB;break;
+      case "div": return numA/numB;break;
+      default : alert(`enter a valid input`)
+    }
+  }
 }
+
+
+
+// let numA = +prompt(`enter first num`);
+// let numB = +prompt(`enter second num`);
+// let operation = prompt(`Operation
+// can only be one of these add, sub, mul, div.`)
+// if(operation === "add"){
+//   alert(`The sum of numbers is ${numA + numB}`)
+// }else if (operation === "sub"){
+//   alert(`The subtraction of numbers is ${numA - numB}`)
+// }else if (operation==="mul"){
+//   alert(`The multiplication of numbers is ${numA * numB}`)
+// }else if (operation==="div"){
+//   alert(`The division of numbers is ${numA / numB}`)
+// }else{
+//   alert(`enter a valid input.`)
+// }
 
 /*
 5. Create a function named `isLeapYear` that accepts a number data type and return `true` or `false` based
@@ -81,20 +97,31 @@ isLeapYear(2000); // true
 isLeapYear(2001); // false
 */
 
-let year = +prompt(`mention a year`)
-if(year%4===0){
-  alert(`This is a leap year`)
-}else{
-  alert(
-    `this is not a leap year`
-  )
+function isLeapYear(year){
+  if(year%400===0)
+    return true;
+  else if (year%100===0)
+    return false;
+  else
+    return year%4===0;
 }
 
 /*
 6. Create a function named `getFactorial` that accepts a number and return the factorial of the number.
 */
-let numFactorial = +prompt(`enter a number for factorial`)
-for(i=numFactorial; i>=1; i--){
-  numFactorial *= i
-}
-alert(`the factorial of the number is ${numFactorial}`)
+
+function getFactorial(number){
+  let final=1;
+  for(let i=number; i>=1; i--){
+    final*=i;
+  }
+  return final;
+} 
+
+
+
+// let numFactorial = +prompt(`enter a number for factorial`)
+// for(i=numFactorial; i>=1; i--){
+//   numFactorial *= i
+// }
+// alert(`the factorial of the number is ${numFactorial}`)
