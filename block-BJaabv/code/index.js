@@ -19,15 +19,15 @@ calculateDogAge(35,7);
   * [ ] calculates the number of movies for rest of the life (based on a constant max age).
   * [ ] Return the total number of movie you will watch.
 */
-
+let maxAge = 80;
 function calculateMoviesToWatch(age, watchPerWeek) {
-  if(age<=35){
-    return `the total number of movie you watched ${watchPerWeek * 48 * age} `
+  if(age<=80){
+    return `the total number of movie you watched ${watchPerWeek * 48 * (maxAge-age)} `
   }else {
-    alert(`Age should be less than or equal to 35.`);
+    alert(`Age should be less than or equal to 80.`);
   }
 }
-calculateMoviesToWatch(25, 2);
+calculateMoviesToWatch(70, 4);
 
 
 /*
@@ -81,19 +81,21 @@ and return sum or product of 1,…,n. If user enters any other value than `sum` 
 
 
 function sumOrProductOfN(number, string) {
-  let finalSum = 0;
-  for(let i=number; i>=1; i--){
-    finalSum += i
-  }
   
+
+  if(string==='product'){
+      
   let finalMul = 1;
   for(let i=number; i>=1; i--){
     finalMul *= i
   }
 
-  if(string==='product'){
     return `The product of 1,.,.${number} is ${finalMul} `
   }else if(string==='sum'){
+    let finalSum = 0;
+  for(let i=number; i>=1; i--){
+    finalSum += i
+  }
     return `The sum of 1,.,.${number} is ${finalSum} `
   }else{
     alert( `Not a valid Input`)
