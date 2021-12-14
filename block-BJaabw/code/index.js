@@ -122,3 +122,8 @@ sum('Arya', 'Stark'); // "Arya Stark"
 // sum('Arya', 2); // Enter valid Values
 // sum(null, 2); // Enter valid Values
 // sum(undefined, 2); // Enter valid Values
+
+
+function checkAge(age) {
+  return age > 18 ? true : confirm('Did parents allow you?');
+}
