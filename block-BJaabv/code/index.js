@@ -135,8 +135,12 @@ sumOfN(20);
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 */
 
-function min() {
-  // Your code goes here
+function min(firstNum, seconNum) {
+  if(firstNum>seconNum){
+    return seconNum;
+  }else{
+    return firstNum;
+  }
 }
 
 min(0, 10);
@@ -146,6 +150,9 @@ min(0, -10);
 9. 🎖Write a JavaScript function which accepts an argument and returns the type of the value.
 */
 
-function typeCheck() {
-  // Your code goes here
+function typeCheck(value) {
+  return typeof value
 }
+typeCheck(12);
+typeCheck("hello");
+
